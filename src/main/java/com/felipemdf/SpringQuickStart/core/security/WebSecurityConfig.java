@@ -69,7 +69,7 @@ public class WebSecurityConfig{
         // AUTORIZAÇÃO DE ROTAS
         http.authorizeHttpRequests((authorizeHttpRequests) ->
         		authorizeHttpRequests
-        			.requestMatchers("/api/auth/**").permitAll();
+        			.requestMatchers("/api/auth/**").permitAll()
         );
 
 
