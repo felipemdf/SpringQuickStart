@@ -1,0 +1,31 @@
+jwt:
+  secret: MyKey
+  expiration: 900000
+    
+spring:
+  flyway:
+    locations: classpath:/db/migration
+    url: jdbc:postgresql://localhost:5432/spring-quick-start
+    user: postgres
+    password: postgres
+    baseline-on-migrate: true
+    fail-on-missing-locations: true
+    enabled: true
+
+  jpa:
+    # defer-datasource-initialization: false
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+      format_sql: true
+    # generate-ddl: false
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/spring-quick-start
+    username: postgres
+    password: postgres
+
+  h2:
+    console:
+      enabled: false
