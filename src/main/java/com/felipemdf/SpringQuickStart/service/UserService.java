@@ -100,7 +100,7 @@ public class UserService implements UserDetailsService{
 		return jwtResponse;
 	}
 	
-	public User register (SignUpRequest signUpRequest) {
+	public void register (SignUpRequest signUpRequest) {
 		if (userRepository.existsByUsername(signUpRequest.getUsername())) {
 			throw new RuntimeException("Error: Username is already taken!");
 		}
@@ -132,6 +132,6 @@ public class UserService implements UserDetailsService{
 	            roles
 	    );
 		
-		return userRepository.save(user);
+		userRepository.save(user);
 	}
 }

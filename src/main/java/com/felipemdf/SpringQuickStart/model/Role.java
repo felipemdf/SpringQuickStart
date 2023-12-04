@@ -11,10 +11,13 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "role")
+@AllArgsConstructor @NoArgsConstructor
 @Data
 public class Role {
     @Id
@@ -25,5 +28,7 @@ public class Role {
     @Enumerated(EnumType.STRING)
     @Column(length = 50, nullable = false, columnDefinition = "varchar")
     private RoleEnum name;
+    
+    
 
 }
